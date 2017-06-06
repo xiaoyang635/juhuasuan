@@ -1,0 +1,17 @@
+.hot-scale ul li .span_r2 {
+  margin-left: .7rem;
+  font-size: .5rem;
+  color: #999;
+  text-decoration: line-through;
+}
+.hot-scale ul li .span_rit {
+  width: 2.5rem;
+  height: .75rem;
+  background: #39b54a;
+  border-radius: 10%;
+  font-size: .5rem;
+  color: #fff;
+  line-height: .75rem;
+  text-align: center;
+  margin-left: 3.4rem;
+}

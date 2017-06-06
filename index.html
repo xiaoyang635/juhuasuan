@@ -1,0 +1,604 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="智能社 - zhinengshe.com"/>
+    <meta name="copyright" content="智能社 - zhinengshe.com"/>
+    <meta name="description"
+          content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .container{
+            width: 100%;
+        }
+        .container header{
+            width: 100%;
+            height: 2.525rem;
+            background: -webkit-linear-gradient(#fff, #ebebeb);
+            position: relative;
+            top: 0;
+            left: 0;
+            text-align: center;
+
+        }
+        header a.back-btn{
+            position: absolute;
+            width: 3.25rem;
+            height: 1.6rem;
+            left: 0.5rem;
+            top: 0.5rem;
+            background: url(img/back.png) no-repeat 0 0;
+            background-size: 100%;
+            text-indent: -999rem;
+        }
+        header img.logo{
+            width: 9.4rem;
+            height: 2.2rem;
+            margin-top: 0.175rem;
+        }
+        .container .banner{
+            width: 16rem;
+            height: 7.45rem;
+            position: relative;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        .banner ul{
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            width: 80rem;
+        }
+        .banner ul li{
+            float: left;
+            width: 16rem;
+            heigth: 6.675rem;
+        }
+        .banner ul li img{
+            width: 100%;
+        }
+        .banner ol{
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            overflow: hidden;
+            width: 2.5rem;
+            margin-left: -1.25rem;
+        }
+        .banner ol li{
+            float: left;
+            width: 0.25rem;
+            height: 0.25rem;
+            background: #a9a9a9;
+            border-radius: 50%;
+            margin: 0 0.125rem;
+        }
+        .banner ol li.active{
+            background: #ff4300;
+        }
+        .nav ul li a img{
+            width: 2rem;
+            height: 2rem;
+        }
+        .nav ul li p{
+            font-size: 0.55rem;
+            color: #999;
+        }
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var oUl=document.querySelector('.banner ul');
+            var aLi=document.querySelectorAll('.banner li');
+            var iNow=0;
+            var tx=0; //ul的translate
+
+            oUl.addEventListener('touchstart',function(ev){
+                var downX=ev.targetTouches[0].pageX;
+                var disX=downX-tx;
+
+                oUl.style.transition='none';
+
+                function fnMove(ev){
+                    tx=ev.targetTouches[0].pageX-disX;
+                    oUl.style.transform='translate3d('+tx+'px,0,0)';
+
+                    ev.preventDefault();
+                }
+                function fnEnd(ev){
+                    document.removeEventListener('touchmove',fnMove,false);
+                    document.removeEventListener('touchend',fnEnd,false);
+                    var upX=ev.changedTouches[0].pageX;
+                    oUl.style.transition='.4s all ease';
+                    if(Math.abs(downX-upX)>20){
+                        //切换
+                        if(downX>upX){ //左  ++
+                            iNow++;
+                            if(iNow==aLi.length){
+                                iNow=aLi.length-1;
+                            }
+                        }else{ // --
+                            iNow--;
+                            if(iNow==-1){
+                                iNow=0;
+                            }
+                        }
+                    }
+                    tx=-iNow*aLi[0].offsetWidth;
+                    oUl.style.transform='translate3d('+tx+'px,0,0)';
+                }
+                document.addEventListener('touchmove',fnMove,false);
+                document.addEventListener('touchend',fnEnd,false);
+            },false);
+        },false);
+    </script>
+</head>
+
+<body>
+<section class="container">
+    <!-- 头部 BEGIN -->
+    <header>
+        <a href="javascript:;" class="back-btn">返回</a>
+        <img src="img/logo.png" alt="logo" class="logo" />
+    </header>
+    <!-- 头部 END -->
+
+    <!-- banner BEGIN -->
+    <section class="banner">
+        <ul>
+            <li>
+                <a href="javascript:;">
+                    <img src="img/banner.png" alt="banner1">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="img/banner1.png" alt="banner2">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="img/banner.png" alt="banner3">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="img/banner1.png" alt="banner4">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="img/banner.png" alt="banner5">
+                </a>
+            </li>
+        </ul>
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="active"></li>
+        </ol>
+    </section>
+    <!-- banner END -->
+
+    <!-- 导航 BEGIN -->
+    <section class="nav">
+        <nav>
+            <ul>
+                <li id="icon1">
+                    <a href="./index1.html"><img src="img/icon1.png" alt=""></a>
+                    <p>商品</p>
+                </li>
+                <li>
+                    <a href="./index2"><img src="img/icon2.png" alt=""></a>
+                    <p>生活</p>
+                </li>
+                <li>
+                    <a href="./index4"><img src="img/icon3.png" alt=""></a>
+                    <p>品牌</p>
+                </li>
+                <li>
+                    <a href="./index6"><img src="img/icon4.png" alt=""></a>
+                    <p>聚宝盆</p>
+                </li>
+                <li>
+                    <a href="javascript:;"><img src="img/icon5.png" alt=""></a>
+                    <p>聚名品</p>
+                </li>
+                <li>
+                    <a href="javascript:;"><img src="img/icon6.png" alt=""></a>
+                    <p>聚家装</p>
+                </li>
+                <li>
+                    <a href="./index7"><img src="img/icon7.png" alt=""></a>
+                    <p>聚透</p>
+                </li>
+                <li>
+                    <a href="javascript:;"><img src="img/icon8.png" alt=""></a>
+                    <p>客户端</p>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <!-- 导航 END -->
+
+    <!-- 热卖排行 BEGIN -->
+    <section class="hot-scale wraper">
+        <h3 class="clearfix">
+            <span class="fl rate">聚划算热卖排行</span>
+            <span class="fr">TOP10</span>
+        </h3>
+        <ul class="body">
+            <li class="clearfix">
+                <div class="fl left">
+                    <b class="fl">1</b>
+                    <a href="javascript:;" class="fl"><img src="img/rate1.jpg" alt=""></a>
+                </div>
+                <div class="fr right">
+                    <span class="fl">
+                        <p>已售 68423</p>
+                        <div class="clearfix">
+                            <p class="fl">2.3折</p>
+                            <p class="fr">￥299</p>
+                        </div>
+                    </span>
+                    <div class="right_r fr">
+                        <p class="fl">￥51</p>
+                        <a href="javascript:;" class="fr"><img src="img/right.png" alt=""></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="clearfix">
+                <div class="fl left">
+                    <b class="fl" style="background: #ff4800;">2</b>
+                    <a href="javascript:;" class="fl"><img src="img/rate2.jpg" alt=""></a>
+                </div>
+                <div class="fr right">
+                    <span class="fl">
+                        <p>已售 68423</p>
+                        <div class="clearfix">
+                            <p class="fl">2.3折</p>
+                            <p class="fr">￥299</p>
+                        </div>
+                    </span>
+                    <div class="right_r fr">
+                        <p class="fl">￥51</p>
+                        <a href="javascript:;" class="fr"><img src="img/right.png" alt=""></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="clearfix">
+                <div class="fl left">
+                    <b class="fl" style="background: #ff7300;">3</b>
+                    <a href="javascript:;" class="fl"><img src="img/rate3.jpg" alt=""></a>
+                </div>
+                <div class="fr right">
+                    <span class="fl">
+                        <p>已售 68423</p>
+                        <div class="clearfix">
+                            <p class="fl">2.3折</p>
+                            <p class="fr">￥299</p>
+                        </div>
+                    </span>
+                    <div class="right_r fr">
+                        <p class="fl">￥51</p>
+                        <a href="javascript:;" class="fr"><img src="img/right.png" alt=""></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="clearfix">
+                <div class="fl left">
+                    <b class="fl" style="background: #ff9d00;">4</b>
+                    <a href="javascript:;" class="fl"><img src="img/rate4.jpg" alt=""></a>
+                </div>
+                <div class="fr right">
+                    <span class="fl">
+                        <p>已售 68423</p>
+                        <div class="clearfix">
+                            <p class="fl">2.3折</p>
+                            <p class="fr">￥299</p>
+                        </div>
+                    </span>
+                    <div class="right_r fr">
+                        <p class="fl">￥51</p>
+                        <a href="javascript:;" class="fr"><img src="img/right.png" alt=""></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="clearfix">
+                <div class="fl left">
+                    <b class="fl" style="background: #ffa800;">5</b>
+                    <a href="javascript:;" class="fl"><img src="img/rate5.jpg" alt=""></a>
+                </div>
+                <div class="fr right">
+                    <span class="fl">
+                        <p>已售 68423</p>
+                        <div class="clearfix">
+                            <p class="fl">2.3折</p>
+                            <p class="fr">￥299</p>
+                        </div>
+                    </span>
+                    <div class="right_r fr">
+                        <p class="fl">￥51</p>
+                        <a href="javascript:;" class="fr"><img src="img/right.png" alt=""></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="clearfix">
+                <div class="fl left">
+                    <b class="fl" style="background: #ffb400;">6</b>
+                    <a href="javascript:;" class="fl"><img src="img/rate6.jpg" alt=""></a>
+                </div>
+                <div class="fr right">
+                    <span class="fl">
+                        <p>已售 68423</p>
+                        <div class="clearfix">
+                            <p class="fl">2.3折</p>
+                            <p class="fr">￥299</p>
+                        </div>
+                    </span>
+                    <div class="right_r fr">
+                        <p class="fl">￥51</p>
+                        <a href="javascript:;" class="fr"><img src="img/right.png" alt=""></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="clearfix">
+                <div class="fl left">
+                    <b class="fl" style="background: #ffba00;">7</b>
+                    <a href="javascript:;" class="fl"><img src="img/rate7.jpg" alt=""></a>
+                </div>
+                <div class="fr right">
+                    <span class="fl">
+                        <p>已售 68423</p>
+                        <div class="clearfix">
+                            <p class="fl">2.3折</p>
+                            <p class="fr">￥299</p>
+                        </div>
+                    </span>
+                    <div class="right_r fr">
+                        <p class="fl">￥51</p>
+                        <a href="javascript:;" class="fr"><img src="img/right.png" alt=""></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="clearfix">
+                <div class="fl left">
+                    <b class="fl" style="background: #fcd000;">8</b>
+                    <a href="javascript:;" class="fl"><img src="img/rate8.jpg" alt=""></a>
+                </div>
+                <div class="fr right">
+                    <span class="fl">
+                        <p>已售 68423</p>
+                        <div class="clearfix">
+                            <p class="fl">2.3折</p>
+                            <p class="fr">￥299</p>
+                        </div>
+                    </span>
+                    <div class="right_r fr">
+                        <p class="fl">￥51</p>
+                        <a href="javascript:;" class="fr"><img src="img/right.png" alt=""></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="clearfix">
+                <div class="fl left">
+                    <b class="fl" style="background: #ffd719;">9</b>
+                    <a href="javascript:;" class="fl"><img src="img/rate9.jpg" alt=""></a>
+                </div>
+                <div class="fr right">
+                    <span class="fl">
+                        <p>已售 68423</p>
+                        <div class="clearfix">
+                            <p class="fl">2.3折</p>
+                            <p class="fr">￥299</p>
+                        </div>
+                    </span>
+                    <div class="right_r fr">
+                        <p class="fl">￥51</p>
+                        <a href="javascript:;" class="fr"><img src="img/right.png" alt=""></a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="clearfix">
+                <div class="fl left">
+                    <b class="fl" style="background: #ffe152;">10</b>
+                    <a href="javascript:;" class="fl"><img src="img/rate10.jpg" alt=""></a>
+                </div>
+                <div class="fr right">
+                    <span class="fl">
+                        <p>已售 68423</p>
+                        <div class="clearfix">
+                            <p class="fl">2.3折</p>
+                            <p class="fr">￥299</p>
+                        </div>
+                    </span>
+                    <div class="right_r fr">
+                        <p class="fl">￥51</p>
+                        <a href="javascript:;" class="fr"><img src="img/right.png" alt=""></a>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+        <div class="body_bot">
+            更多划算 逛起来！
+        </div>
+    </section>
+    <!-- 热卖排行 END -->
+
+    <!-- 商品团 BEGIN -->
+    <section class="goods-t wraper">
+        <ul>
+            <li class="clearfix">
+                <div class="left fl">
+                    <img src="img/left1.jpg" alt="出错了">
+                </div>
+                <div class="right">
+                    <ul>
+                        <li class="on">服饰</li>
+                        <li>配饰</li>
+                        <li>美妆</li>
+                        <li>鞋包</li>
+                        <li>食品</li>
+                        <li class="on">家居</li>
+                        <li>运动</li>
+                        <li class="on">电器</li>
+                        <li>百货</li>
+                        <li>母婴</li>
+                        <li>数码</li>
+                        <li>更多</li>
+                    </ul>
+                </div>
+                <div class="clearfix mar">
+                    <p class="fl">精彩商品 逛起来！</p>
+                    <a href="javascript:;"><img class="fr" src="img/arrow.png" alt="出错了"></a>
+
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="left fl">
+                    <img src="img/left2.jpg" alt="出错了">
+                </div>
+                <div class="right">
+                    <ul>
+                        <li class="on">美食</li>
+                        <li>教育</li>
+                        <li>酒店</li>
+                        <li>电影</li>
+                        <li>生活服务</li>
+                        <li class="on">卡卷</li>
+                        <li>摄影</li>
+                        <li class="on">粮油生鲜</li>
+                        <li>门票</li>
+                        <li>休闲娱乐</li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="clearfix mar">
+                    <p class="fl">精彩商品 逛起来！</p>
+                    <a href="javascript:;"><img class="fr" src="img/arrow.png" alt="出错了"></a>
+
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="left fl">
+                    <img src="img/left3.jpg" alt="出错了">
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>七匹狼</li>
+                        <li class="on">粉红女郎</li>
+                        <li>卓诗尼</li>
+                        <li class="on">收纳博士</li>
+                        <li>惠氏</li>
+                        <li>夏乐</li>
+                        <li>帕克伦</li>
+                        <li>古今</li>
+                        <li class="on">九牧</li>
+                        <li>诺奥</li>
+                        <li>红豆</li>
+                        <li>曼秀雷敦</li>
+                    </ul>
+                </div>
+                <div class="clearfix mar">
+                    <p class="fl">精彩商品 逛起来！</p>
+                    <a href="javascript:;"><img class="fr" src="img/arrow.png" alt="出错了"></a>
+
+                </div>
+            </li>
+        </ul>
+    </section>
+    <!-- 商品团 END -->
+
+    <!--&lt;!&ndash; 生活团 BEGIN &ndash;&gt;-->
+    <!--<section class="live-t"></section>-->
+    <!--&lt;!&ndash; 生活团 EDN &ndash;&gt;-->
+
+    <!--&lt;!&ndash; 品牌团 BEGIN &ndash;&gt;-->
+    <!--<section class="brand-t"></section>-->
+    <!--&lt;!&ndash; 品牌团 END &ndash;&gt;-->
+
+    <!-- 下载 BEGIN -->
+    <section class="download-box wraper">
+        <div class="clearfix">
+            <a href="javascript:;" class="on"><img src="img/apple.png" alt=""></a>
+            <a href="javascript:;"><img src="img/andriod.png" alt=""></a>
+            <a href="javascript:;"><img src="img/message.png" alt=""></a>
+        </div>
+    </section>
+    <!-- 下载 END -->
+
+    <!-- 用户 BEGIN -->
+    <section class="user-box">
+        <div class="wraper body clearfix">
+            <div class="left fl">
+                <h4><a href="javascript:;" class="om">登录</a></h4>
+                <h4><a href="javascript:;" class="on">注册</a></h4>
+            </div>
+            <div class="right fr">
+                <p class="fl">TOP</p>
+                <a href="javascript:;"><img src="img/top.png" alt="出错了"></a>
+            </div>
+        </div>
+
+    </section>
+    <!-- 用户 END -->
+
+    <!-- foot BEGIN -->
+    <footer>
+        <div class="body wraper">
+            <h5>
+                <a href="javascript:;">标准版</a>
+                <a href="javascript:;">电脑板</a>
+            </h5>
+            <p>©2013浙B2-20080224 服务中心</p>
+        </div>
+    </footer>
+    <!-- foot END -->
+</section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

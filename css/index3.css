@@ -1,0 +1,36 @@
+.hot-scale {
+  height: 2.2rem;
+  background: #f8f8f8;
+}
+.hot-scale div div a img {
+  margin-top: .675rem;
+  width: 0.55rem;
+  height: 0.65rem;
+}
+.hot-scale div div span {
+  font-size: .75rem;
+  line-height: 2.2rem;
+}
+.hot-scale div i img {
+  width: .65rem;
+  height: .675rem;
+  margin-top: .825rem;
+}
+.city .city_top {
+  height: 2rem;
+  background: #eee;
+}
+.city .city_top p {
+  line-height: 2rem;
+  font-size: .65rem;
+  color: #999;
+}
+.city .city_body ul li {
+  font-size: .75rem;
+  color: #000;
+  width: 100%;
+  height: 2.175rem;
+  line-height: 2.175rem;
+  padding-left: 1.525rem;
+  border-top: 0.025rem solid #dedede;
+}

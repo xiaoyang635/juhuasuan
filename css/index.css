@@ -1,0 +1,195 @@
+.nav ul {
+  margin-left: 0.425rem;
+}
+.nav ul li {
+  float: left;
+  margin: 1rem 0.9rem 0;
+}
+.nav ul li p {
+  text-align: center;
+  margin-top: 0.45rem;
+}
+.hot-scale h3 {
+  width: 15rem;
+  border-bottom: 0.1rem solid #dcdcdc;
+  padding-bottom: 0.575rem;
+}
+.hot-scale h3 span {
+  margin-top: 1.6rem;
+  font-size: 0.65rem;
+  color: #333;
+  text-align: center;
+}
+.hot-scale h3 .rate {
+  background: url("../img/rate-left.png") no-repeat 0 0;
+  padding-left: 0.55rem;
+}
+.hot-scale .body {
+  margin-top: 0.75rem;
+}
+.hot-scale .body li {
+  margin-bottom: 0.5rem;
+}
+.hot-scale .body li .left b {
+  width: 1.5rem;
+  height: 3rem;
+  background: #e00202;
+  display: block;
+  line-height: 3rem;
+  color: #FFF;
+  text-align: center;
+}
+.hot-scale .body li .left a img {
+  width: 4.5rem;
+  height: 3rem;
+}
+.hot-scale .body li .right {
+  width: 9rem;
+  height: 3rem;
+  background: #f4f4f4;
+}
+.hot-scale .body li .right span {
+  margin: 0.6rem 0 0 0.55rem;
+}
+.hot-scale .body li .right span p {
+  font-size: 0.6rem;
+  color: #999;
+  line-height: 0.95rem;
+}
+.hot-scale .body li .right span div {
+  width: 3.6rem;
+}
+.hot-scale .body li .right .right_r {
+  line-height: 3rem;
+}
+.hot-scale .body li .right .right_r p {
+  font-size: 0.6rem;
+  color: #d51938;
+}
+.hot-scale .body li .right .right_r a {
+  margin: 1.2rem 0.5rem 0;
+}
+.hot-scale .body li .right .right_r a img {
+  width: 0.325rem;
+  height: 0.55rem;
+}
+.hot-scale .body_bot {
+  width: 100%;
+  height: 2rem;
+  background: #f5f5f5;
+  font-size: 0.675rem;
+  line-height: 2rem;
+  text-align: center;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+.goods-t ul li .left img {
+  width: 3.75rem;
+  height: 8.8rem;
+}
+.goods-t ul li .right ul {
+  height: 8.8rem;
+  border-right: 0.025rem solid #eee;
+  border-bottom: 0.025rem solid #eee;
+}
+.goods-t ul li .right ul li {
+  float: left;
+  width: 3.68rem;
+  height: 2.15rem;
+  border-top: 0.025rem solid #eee;
+  border-left: 0.025rem solid #eee;
+  line-height: 2.15rem;
+  text-align: center;
+  font-size: 0.65rem;
+  color: #999;
+}
+.goods-t ul li .right ul .on {
+  color: #d51942;
+}
+.goods-t ul .mar {
+  margin: 0.5rem 0;
+  width: 15rem;
+  height: 2.2rem;
+  background: #f5f5f5;
+  display: block;
+}
+.goods-t ul .mar p {
+  line-height: 2.2rem;
+  font-size: 0.65rem;
+  color: #666;
+  margin-left: 4.75rem;
+}
+.goods-t ul .mar a img {
+  width: 0.325rem;
+  height: 0.55rem;
+  line-height: 2.2rem;
+  margin: 0.85rem 0.45rem 0 0;
+}
+.download-box div {
+  margin-bottom: 0.5rem;
+  width: 15rem;
+  height: 4rem;
+  box-sizing: content-box;
+  border-top: 0.025rem solid #eee;
+  border-bottom: 0.025rem solid #eee;
+}
+.download-box div a {
+  box-sizing: content-box;
+  float: left;
+  border-right: 0.025rem solid #eee;
+}
+.download-box div a img {
+  width: 4.93rem;
+  height: 3.95rem;
+}
+.download-box div .on {
+  border-left: 0.025rem solid #eee;
+}
+.user-box {
+  width: 100%;
+  height: 2.2rem;
+  background: #f8f8f8;
+}
+.user-box .body .left h4 {
+  float: left;
+}
+.user-box .body .left h4 a {
+  font-size: 0.65rem;
+  color: #333;
+  line-height: 2.2rem;
+}
+.user-box .body .left h4 .on {
+  margin-left: 1.2rem;
+}
+.user-box .body .left h4 .om {
+  margin-left: 0.25rem;
+}
+.user-box .body .right p {
+  font-size: 0.65rem;
+  color: #333;
+  line-height: 2.2rem;
+}
+.user-box .body .right a img {
+  width: 0.425rem;
+  height: 0.225rem;
+  margin: 0.95rem 0.7rem 0 0.7rem;
+}
+footer {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+footer .body h5 {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+footer .body h5 a {
+  font-size: 0.65rem;
+  color: #333;
+}
+footer .body p {
+  text-align: center;
+  color: #999;
+  font-size: 0.45rem;
+  padding: 1rem 0;
+}
